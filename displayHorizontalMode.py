@@ -47,6 +47,7 @@ def main():
 
     # update the display
     epd.clear_frame_memory(0xFF)
+    # rotate the image by 90 degrees
     epd.set_frame_memory(image.rotate(90), 0, 0)    # upper left corner coordinates
     epd.display_frame()
 

@@ -21,7 +21,7 @@ def main():
     font12Sans = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeSans.ttf', 12)
     font24Sans = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeSans.ttf', 24)
 
-    # the image to be drawn on the display (horizontal)
+    # the image to be drawn on the display (vertical)
     image = Image.new('1', (epd2in9.EPD_WIDTH, epd2in9.EPD_HEIGHT), 255)  # 255: clear the frame
     draw = ImageDraw.Draw(image)
 
@@ -47,6 +47,7 @@ def main():
 
     # update the display
     epd.clear_frame_memory(0xFF)
+    # no rotation of the image required
     epd.set_frame_memory(image, 0, 0)    # upper left corner coordinates
     epd.display_frame()
 
